@@ -4,8 +4,9 @@ app = Flask('web-practice')
 
 
 @app.route('/')
-def index():
-    return render_template('home.html')
+@app.route('/home/<user>')
+def index(user='world'):
+    return render_template('home.html', user=user)
 
 
 def main():
