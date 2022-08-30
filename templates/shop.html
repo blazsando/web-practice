@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1 class="title text-center">Hello {{ user }}!</h1>
+    <div class="card">
+    {% for shop in shop_datas %}
+        <button> {{ shop }} </button>
+    {% endfor %}
+
+    </div>
+{% endblock %}
