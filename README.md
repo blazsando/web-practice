@@ -16,3 +16,7 @@
 - use route param
 - pass route param to render template
 - display user name with jinja syntax
+
+4. New button on page displaying shop categories
+- add new button in navbar using the url-for syntax
+- on the new template display a button for each shop category from the data.py file
