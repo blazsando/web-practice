@@ -20,3 +20,7 @@
 4. New button on page displaying shop categories
 - add new button in navbar using the url-for syntax
 - on the new template display a button for each shop category from the data.py file
+
+5. Add a form that has all the brands listed that can be found in the given category
+- use input select and options
+- use list and dictionary functions (keys, values, items etc)
