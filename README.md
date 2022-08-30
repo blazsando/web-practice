@@ -9,4 +9,4 @@
 2. Introduce template inheritance
 - Make new template: home.html
 - modify index template that the content in the section is a content block
-- load the originial content from index with content block in home.html
+- load the originial content from indexgit  with content block in home.html
