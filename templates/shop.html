@@ -4,8 +4,18 @@
     <h1 class="title text-center">Hello {{ user }}!</h1>
     <div class="card">
     {% for shop in shop_datas %}
-        <button> {{ shop }} </button>
+{#        <a href="/shop/ski"><button> {{ shop.category }} </button></a>#}
+        <a href={{ url_for('shop', category=shop.category)}}><button> {{ shop.category }} </button></a>
     {% endfor %}
-
     </div>
+
+    {% if brands %}
+    <div class="card">
+            <select name="please choose an option" id="">
+                {% for brand in brands %}
+                    <option value="brands">{{ brand }}</option>
+                {% endfor %}
+            </select>
+    </div>
+    {% endif %}
 {% endblock %}

@@ -13,9 +13,15 @@ def index(user='world'):
 
 
 @app.route('/shop')
-def shop():
+@app.route('/shop/<category>')
+def shop(category=None):
     shop_data = categories.data
-    return render_template('shop.html', shop_datas=shop_data)
+    brands = None
+    if category:
+        for item in shop_data:
+            if item['category'] == category:
+                brands = item['brands']
+    return render_template('shop.html', shop_datas=shop_data, category=category, brands=brands)
 
 
 def main():
