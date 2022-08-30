@@ -7,6 +7,10 @@ app = Flask('web-practice')
 def index():
     return render_template('index.html')
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
 
 def main():
     app.run(debug=True)
