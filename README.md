@@ -10,3 +10,9 @@
 - Make new template: home.html
 - modify index template that the content in the section is a content block
 - load the originial content from indexgit  with content block in home.html
+
+3. Welcome visitor with name
+- Add new route to home method '/home/<user>'
+- use route param
+- pass route param to render template
+- display user name with jinja syntax
