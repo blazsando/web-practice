@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="card">
+    {% for category in shop_categories %}
+            <a href={{ url_for('shop') }}>
+                <button>{{ category }}</button>
+            </a>
+{% endfor %}
+</div>
+
+{% endblock %}

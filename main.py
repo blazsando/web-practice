@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 
+import categories
+
 app = Flask('web-practice')
 
 
@@ -8,7 +10,10 @@ app = Flask('web-practice')
 def index(user = 'lacimaci'):
     return render_template('home.html', user=user)
 
-
+@app.route('/shop')
+def shop():
+    shop_categories = categories.data
+    return render_template('shop.html', shop_categories=shop_categories)
 def main():
     app.run(debug=True)
 
