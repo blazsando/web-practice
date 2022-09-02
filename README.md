@@ -9,13 +9,13 @@
 2. Introduce template inheritance
 - Make new template: home.html
 - modify index template that the content in the section is a content block
-- load the originial content from indexgit  with content block in home.html
+- load the original content from index with content block in home.html
 
 3. Welcome visitor with name
 - Add new route to home method '/home/<user>'
 - use route param
 - pass route param to render template
-- display user name with jinja syntax
+- display username with jinja syntax
 
 4. New button on page displaying shop categories
 - add new button in navbar using the url-for syntax
@@ -24,3 +24,9 @@
 5. Add a form that has all the brands listed that can be found in the given category
 - use input select and options
 - use list and dictionary functions (keys, values, items etc)
+
+6. Add a table with products data after selecting category brand
+- use form
+- register a submit button
+- use request form
+- handle empty stock with 'empty stock' label
