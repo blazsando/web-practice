@@ -11,9 +11,15 @@ def index(user = 'lacimaci'):
     return render_template('home.html', user=user)
 
 @app.route('/shop')
-def shop():
-    shop_categories = categories.data
-    return render_template('shop.html', shop_categories=shop_categories)
+@app.route('/shop/<category>')
+def shop(category = None):
+    shop_data = categories.data
+    brands = None
+    if category:
+        for item in shop_data:
+           if item['category'] == category:
+               brands = item['brands']
+    return render_template('shop.html', shop_categories=shop_data, brands=brands)
 def main():
     app.run(debug=True)
 
