@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1 class="title text-center">Hello {{ user }}!</h1>
+    <div class="card">
+    {% for category in categories %}
+        <button>{{ category }}</button>
+    {% endfor %}
+    </div>
+{% endblock %}
