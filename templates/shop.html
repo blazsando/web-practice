@@ -1,12 +1,21 @@
 {% extends 'index.html' %}
 
-
-
 {% block content %}
 <div class="card">
     {% for category in shop_data %}
-        <a href="#"><button>{{ category.category }}</button></a>
+        <a href="{{ url_for('shop', sport=category.name)}}"><button>{{ category.name }}</button></a>
     {% endfor %}
-
 </div>
+
+{% if brands %}
+    <div class="card">
+        <select name="choose-brand" id="">
+        <option value="" disabled selected>Select brand</option>
+            {% for brand in brands %}
+            <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select>
+    </div>
+{% endif %}
+
 {% endblock %}

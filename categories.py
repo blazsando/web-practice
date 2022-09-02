@@ -1,4 +1,4 @@
-data = [{'category': 'ski', 'brands': ['rosignol', 'nordica', 'head']},
-        {'category': 'table-tennis', 'brands': ['pongori', 'stiga', 'joola']},
-        {'category': 'climbing', 'brands': ['simond', 'sparta', 'petzl']},
-        {'category': 'running', 'brands': ['saucony', 'adidas', 'nike']}]
+data = [{'name': 'ski', 'brands': ['rosignol', 'nordica', 'head']},
+        {'name': 'table-tennis', 'brands': ['pongori', 'stiga', 'joola']},
+        {'name': 'climbing', 'brands': ['simond', 'sparta', 'petzl']},
+        {'name': 'running', 'brands': ['saucony', 'adidas', 'nike']}]
