@@ -9,7 +9,7 @@
         {% endfor %}
     </div>
 
-    {% if brands %}
+    {% if sport %}
         <div class="card">
             <form action="{{ url_for('shop', sport=sport) }}" method="post">
                 <label>
@@ -20,9 +20,33 @@
                         {% endfor %}
                     </select>
                 </label>
-            <button type="submit" class="submit" id="brand-btn">Submit purchase</button>
+                <button type="submit" class="submit" id="brand-btn">Submit purchase</button>
             </form>
+
+            {% if chosen_product %}
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Season</th>
+                        <th>Color</th>
+                    </tr>
+                    </thead>
+                    {% for product in chosen_product %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.season }}</td>
+                            <td>{{ product.color }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% elif chosen_product is not none and chosen_product|length==0 %}
+                <p>Empty stock</p>
+            {% endif %}
         </div>
     {% endif %}
+
 
 {% endblock %}
