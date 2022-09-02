@@ -12,9 +12,18 @@ def index(user='world'):
 
 
 @app.route('/shop')
-def shop_page():
+@app.route('/shop/<category>')
+def shop_page(category = None):
     shop_data = categories.data
-    return render_template('shop_page.html', shop_data=shop_data)
+    brands = None
+    if category:
+        for item in shop_data:
+            if item['category'] == category:
+                brands = item['brands']
+
+    return render_template('shop_page.html', shop_data=shop_data, brands=brands)
+
+
 
 def main():
     app.run(debug=True)

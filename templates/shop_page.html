@@ -1,8 +1,25 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <div class="card">{% for data in shop_data %}
-        <button>{{ data }}</button>
-    {% endfor %}
+    <div class="card">
+        {% for category in shop_data %}
+            <a href={{ url_for('shop_page', category=category.category) }}>
+                <button>{{ category.category }}</button>
+            </a>
+        {% endfor %}
     </div>
+
+    {% if brands %}
+    <div class="card">
+        <h2>These are the brands you can choose from: </h2>
+        <label>
+            <select name="categories" id="select-brand">
+                {% for brand in brands  %}
+                    <option value="brands">{{ brand }}</option>
+                {% endfor %}
+            </select>
+        </label>
+
+    </div>
+    {% endif %}
 {% endblock %}
