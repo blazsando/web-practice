@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+
+
+{% block content %}
+<div class="card">
+    {% for category in shop_data %}
+        <a href="#"><button>{{ category.category }}</button></a>
+    {% endfor %}
+
+</div>
+{% endblock %}

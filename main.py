@@ -1,13 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
+
+import categories
 
 app = Flask('web-practice')
 
 
 @app.route('/')
+
 def index():
-    return 'Hello world'
+    return render_template('index.html')
 
-
+@app.route('/shop')
+def shop():
+    shop_data = categories.data
+    return render_template('shop.html', shop_data=shop_data)
 def main():
     app.run(debug=True)
 
