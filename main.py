@@ -1,11 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
+import categories
 
 app = Flask('web-practice')
 
 
 @app.route('/')
 def index():
-    return 'Hello world'
+    return render_template('index.html')
+
+
+@app.route('/shop/<category>')
+@app.route('/shop')
+def shop(category=None):
+    sports = categories.data
+    return render_template('shop.html', categories=sports)
 
 
 def main():

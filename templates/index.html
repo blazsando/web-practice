@@ -37,9 +37,11 @@
         <span id="header-title" class="title">Codecool Series DB</span>
         <div id="header-auth">
             <a href="#"><button type="button" id="bt-register">Home</button></a>
+            <a href="{{ url_for('shop') }}"><button type="button" id="bt-register">Shop</button></a>
         </div>
     </header>
     <section>
+        {% block content %}
         <h1 class="title text-center">Hello world!</h1>
         <div class="card">
             <h2>Welcome Web students!</h2>
@@ -49,6 +51,7 @@
             <p>Best of luck to you all, your loving mentor: Blazs
             </p>
         </div>
+        {% endblock %}
     </section>
     <footer>
         Copyright, bla-bla

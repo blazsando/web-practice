@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <div class="card">
+        {% for category in categories %}
+            <a href="{{ url_for('shop', category=category.category) }}"><button>{{ category.category }}</button></a>
+        {% endfor %}
+
+    </div>
+{% endblock %}
