@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 
 import categories
+from data import queries
 
 app = Flask('web-practice')
 
@@ -18,7 +19,7 @@ def shop(sport=None):
     if request.method == 'POST':
         brand = request.form.get('choose-brand')
         chosen_product = categories.products[brand]
-        print(chosen_product)
+        # print(chosen_product)
     brands = None
     shop_data = categories.data
     if sport:
@@ -26,6 +27,12 @@ def shop(sport=None):
             if category['name'] == sport:
                 brands = category['brands']
     return render_template('shop.html', shop_data=shop_data, brands=brands, sport=sport, chosen_product=chosen_product)
+
+
+@app.route('/shows',methods=['GET','POST'])
+def shows():
+    shows = queries.get_shows()
+    return render_template('shows.html', shows=shows)
 
 
 def main():

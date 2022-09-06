@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block head %}
+<script src="{{ url_for('static', filename='js/index.js') }}" defer>
+</script>
+
+{% endblock %}
+{% block content %}
+    <div class="card">
+    <ul>
+        {% for show in shows %}
+            <li>{{ show.title }}</li>
+        {% endfor %}
+
+    </ul>
+    </div>
+    <p>Csaaaaa</p>
+{% endblock %}

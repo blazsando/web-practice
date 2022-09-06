@@ -8,10 +8,6 @@ from psycopg2 import DataError
 import init_db
 from data_manager import execute_select, execute_dml_statement
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
 headers = {
     'Content-Type': 'application/json',
     'trakt-api-version': '2',

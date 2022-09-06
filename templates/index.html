@@ -28,6 +28,8 @@
 
     <!-- page specific styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style/detailed-view.css') }}">
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
@@ -38,6 +40,7 @@
         <div id="header-auth">
             <a href="{{ url_for('index') }}"><button type="button" id="bt-register">Home</button></a>
             <a href="{{ url_for('shop') }}"><button type="button" id="bt-shop">Shop</button></a>
+            <a href="{{ url_for('shows') }}"><button type="button" id="bt-shop">Shows</button></a>
         </div>
     </header>
     <section>
