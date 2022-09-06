@@ -8,4 +8,43 @@
         {% endfor %}
 
     </div>
+    <div class="brands">
+
+    {% if brands is not none %}
+        <form action="#" method="post">
+    <select name="brand">
+        {% for brand in brands %}
+        <option value="{{ brand }}">
+                {{ brand }}
+        </option>
+        {% endfor %}
+    </select>
+        <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+    </div>
+    {% if products  %}
+
+        <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Season</th>
+            <th>Color</th>
+        </tr>
+
+              {% for product in products %}
+                  <tr>
+                      <td>{{ product.name }}</td>
+                      <td>{{ product.price }}</td>
+                      <td>{{ product.season }}</td>
+                      <td>{{ product.color }}</td>
+                  </tr>
+        {% endfor %}
+        </table>
+
+
+    {% endif %}
+
+
 {% endblock %}
