@@ -63,7 +63,7 @@ def get_connection_data(db_name=None):
 
 def execute_script_file(file_path):
     """
-    Execute script file based on the given file path.
+    Execute script.js file based on the given file path.
     Print the result of the execution to console.
 
     Example:
@@ -79,7 +79,7 @@ def execute_script_file(file_path):
             try:
                 sql_to_run = script_file.read()
                 cursor.execute(sql_to_run)
-                print("{} script executed successfully.".format(file_path))
+                print("{} script.js executed successfully.".format(file_path))
             except Exception as ex:
                 print("Execution of {} failed".format(file_path))
                 print(ex.args)

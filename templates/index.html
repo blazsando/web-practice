@@ -28,6 +28,7 @@
 
     <!-- page specific styling -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style/detailed-view.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 
 <body>
@@ -40,7 +41,10 @@
         </div>
     </header>
     <section>
+        {% block title %}
         <h1 class="title text-center">Hello world!</h1>
+        {% endblock %}
+        {% block content %}
         <div class="card">
             <h2>Welcome Web students!</h2>
             <p>This great project is gonna guide you through of most basic python and flas features</p>
@@ -50,6 +54,8 @@
             </p>
         </div>
     </section>
+    {% endblock %}
+
     <footer>
         Copyright, bla-bla
     </footer>

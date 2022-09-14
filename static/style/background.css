@@ -32,3 +32,10 @@
 
     background: #4c97ca;
 }
+
+p{
+    background-color: white;
+    margin: 5px;
+    padding: 0px;
+    text-align: center;
+}

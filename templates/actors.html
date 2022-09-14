@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<h1 class="title text-center">Actors</h1>
+{% endblock %}
+
+{% block content %}
+
+    <table data-set="actors">
+        <tr>
+            <th>Actor</th>
+            <th>Birthday</th>
+        </tr>
+        {% for data in actors_data %}
+            <tr>
+{#            <td data-about-actor="{{data.id}}">{{ data.actor }}</td>#}
+            <td data-about-actor="{{data.actor}}">{{ data.actor }}</td>
+            <td>{{ data.bday }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div class="container" id="character">
+
+    </div>
+
+{% endblock %}
