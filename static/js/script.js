@@ -14,27 +14,18 @@ async function listCharacters(currentActor) {
     for (const character of characters) {
         let paragraph = document.createElement('p');
         paragraph.innerText = character.character_name;
-        // console.log(paragraph)
         actorDiv.appendChild(paragraph)
     }
 }
 
 function initPage() {
-    // let actorInTable = document.querySelectorAll('[data-set="actors"] tr td')
     let actorInTable = document.querySelectorAll('td[data-about-actor]');
-    let clickOnBody = document.querySelector('section');
-    // console.log(actorInTable)
     actorInTable.forEach(actor => {
         actor.addEventListener('click', () => {
-            console.log(actor.dataset)
             const currentActor = actor.dataset.aboutActor
             listCharacters(currentActor);
 
         })
-    // clickOnBody.addEventListener('click', () => {
-    //     let currentActor = 0
-    //     listCharacters(currentActor);
-    //     })
     })
 }
 
