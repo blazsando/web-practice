@@ -20,11 +20,13 @@ def get_played_characters():
     current_actor_id = (request.args.get('current_actor'))
     characters = queries.get_played_characters(current_actor_id)
     print(current_actor_id)
+    print(characters)
     return jsonify(characters)
 
 
 def main():
-    app.run(debug=True)
+    app.run(debug=True,
+            port=5001)
 
 
 if __name__ == '__main__':
